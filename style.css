@@ -1,0 +1,70 @@
+body {
+    min-height: 100vh;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text {
+    color: #02fafc;
+    font-size: 24px;
+    padding: 5px;
+    text-align: center;
+    animation: blink 0.5s ease-in-out infinite;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+.thumb {
+    position: relative;
+    background: url(./thumb.svg) no-repeat;
+    background-size: 200px;
+    height: 200px;
+    width: 200px;
+}
+
+.thumb::after {
+    position: absolute;
+    content: '';
+    height: 10px;
+    background-color: #02fafc;
+    width: 100%;
+    border-radius: 8px;
+    animation: line 3s ease-in-out infinite;
+}
+
+@keyframes line {
+    0%, 100% {
+        top: 0%;
+    }
+    50% {
+        top: 100%;
+    }
+}
+
+.thumb::before {
+    position: absolute;
+    content: '';
+    background: url(./thumbscan.svg) no-repeat;
+    background-size: 200px;
+    height: 200px;
+    width: 200px;
+    animation: scan 3s ease-in-out infinite;
+}
+
+@keyframes scan {
+    0%, 100% {
+        height: 0%;
+    }
+    50% {
+        height: 100%;
+    }
+}
